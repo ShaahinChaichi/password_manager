@@ -41,14 +41,8 @@ def save():
 
     if len(website) == 0 or len(password) == 0:
         messagebox.showinfo(title="Info", message="Please dont leave any blank field")
-
     else:
-        is_ok = messagebox.askyesno(title=website, message=f"These are details entered \nEmail = {email}"
-                                                           f"\n password: {password}\n"
-                                                           f"is it ok?")
-
-        if is_ok:
-            with open("data.txt", mode="a") as data_file:
+        with open("data.txt", mode="a") as data_file:
                 data_file.writelines(f"{website} | {email} | {password}\n")
                 website_entry.delete(0, END)
                 email_entry.delete(0, END)
